@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/catalogue.min.css') }}">
+{% endblock %}
+
+{% block title %}Catalogue - DiD Kustom Garage{% endblock %}
+
+{% block body %}
+    <h1>Catalogue</h1>
+    <ul id="categories">
+        {% for category in categories %}
+            <li class="category" data-category-id="{{ category.id }}">
+                <h2>{{ category.catName }}</h2>
+                <ul class="subcategories" style="display: none;">
+                    {% for subcategory in category.subCategories %}
+                        <li class="subcategory" data-subcategory-id="{{ subcategory.id }}">
+                            <h3>{{ subcategory.subName }}</h3>
+                            <ul class="products" style="display: none;">
+                                {% for product in subcategory.produits %}
+                                    <li>{{ product.produitName }} - {{ product.produitDesc }} - {{ product.produitPrice }}</li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.category').click(function() {
+                $(this).find('.subcategories').toggle();
+            });
+
+            $('.subcategory').click(function(event) {
+                event.stopPropagation();
+                $(this).find('.products').toggle();
+            });
+        });
+    </script>
+{% endblock %}

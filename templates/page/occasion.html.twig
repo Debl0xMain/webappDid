@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('assets/css/occasion.min.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h1>Liste des motos</h1>
+
+    <form id="filterForm">
+        <h2>Filtrer par marque :</h2>
+        {% for marque in marques %}
+            <label>
+                <input type="checkbox" class="marqueCheckbox" value="{{ marque.id }}"> {{ marque.name }}
+            </label>
+        {% endfor %}
+    </form>
+
+    <ul id="motosList">
+        {% for moto in motos %}
+            <li>{{ moto.motoName|e }} - {{ moto.marque.Name|e }}</li>
+        {% else %}
+            <li>No motos found.</li>
+        {% endfor %}
+    </ul>
+    <div id="errorMessage" class="error"></div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('assets/js/select.min.js') }}"></script>
+{% endblock %}
