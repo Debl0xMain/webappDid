@@ -116,13 +116,13 @@ class __TwigTemplate_d7701bdfef849b29dd28e7246662ed78 extends Template
         yield "<h1 class=\"harley_style text-center\">Did Kustom Garage</h1>
 <section class=\"row mt-1 buble_size text-center\">
     <div class=\"col reveal-right\">
-        <img class=\"acc_buble_img\" src=\"";
+        <img class=\"img-fluid acc_buble_img\" src=\"";
         // line 13
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/reparation.webp"), "html", null, true);
         yield "\" alt=\"Réparation de motos\" width=\"300\" height=\"200\">
     </div>
     <div class=\"col reveal-left buble_size\">
-        <img class=\"acc_buble_img\" src=\"";
+        <img class=\"img-fluid acc_buble_img\" src=\"";
         // line 16
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/Entretien.webp"), "html", null, true);
         yield "\" alt=\"Entretien de motos\" width=\"300\" height=\"200\">
@@ -130,7 +130,7 @@ class __TwigTemplate_d7701bdfef849b29dd28e7246662ed78 extends Template
 </section>
 <section class=\"row reveal-bot buble_size text-center\">
     <div class=\"col\">
-        <img class=\"acc_buble_img\" src=\"";
+        <img class=\"img-fluid acc_buble_img\" src=\"";
         // line 21
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/Preparation.webp"), "html", null, true);
         yield "\" alt=\"Préparation de motos\" width=\"300\" height=\"200\">
@@ -247,15 +247,15 @@ class __TwigTemplate_d7701bdfef849b29dd28e7246662ed78 extends Template
 <h1 class=\"harley_style text-center\">Did Kustom Garage</h1>
 <section class=\"row mt-1 buble_size text-center\">
     <div class=\"col reveal-right\">
-        <img class=\"acc_buble_img\" src=\"{{ asset('assets/img/reparation.webp') }}\" alt=\"Réparation de motos\" width=\"300\" height=\"200\">
+        <img class=\"img-fluid acc_buble_img\" src=\"{{ asset('assets/img/reparation.webp') }}\" alt=\"Réparation de motos\" width=\"300\" height=\"200\">
     </div>
     <div class=\"col reveal-left buble_size\">
-        <img class=\"acc_buble_img\" src=\"{{ asset('assets/img/Entretien.webp') }}\" alt=\"Entretien de motos\" width=\"300\" height=\"200\">
+        <img class=\"img-fluid acc_buble_img\" src=\"{{ asset('assets/img/Entretien.webp') }}\" alt=\"Entretien de motos\" width=\"300\" height=\"200\">
     </div>
 </section>
 <section class=\"row reveal-bot buble_size text-center\">
     <div class=\"col\">
-        <img class=\"acc_buble_img\" src=\"{{ asset('assets/img/Preparation.webp') }}\" alt=\"Préparation de motos\" width=\"300\" height=\"200\">
+        <img class=\"img-fluid acc_buble_img\" src=\"{{ asset('assets/img/Preparation.webp') }}\" alt=\"Préparation de motos\" width=\"300\" height=\"200\">
     </div>
 </section>
 <address class=\"row my-5 joinme_background py-2\">

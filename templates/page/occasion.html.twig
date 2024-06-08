@@ -5,55 +5,68 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Liste des motos</h1>
+    <h1 class="harley_style text-center">Nos Occasions</h1>
 
     <form id="filterForm">
-        <h2>Filtrer par marque :</h2>
-        {% for marque in marques %}
-            <label>
-                <input type="checkbox" class="marqueCheckbox" value="{{ marque.id }}"> {{ marque.name }}
-            </label>
-        {% endfor %}
+        <section class="border px-5 my-auto py-2 bg-secondary">
+            <h2 class="harley_style2 text-center">Filtrer par marque :</h2>
+            {% for marque in marques %}
+                <label>
+            {% set img = (marque.name|lower) ~ '.webp' %}
+                    <input type="checkbox" class="marqueCheckbox" value="{{ marque.id }}">
+                    <img src="{{ asset('assets/img/logos_webp/' ~ img) }}" class="img-fluid img_logo rounded-start my-auto rounded mx-1" alt={{marque.name}} title={{marque.name}}>
+                </label>
+            {% endfor %}
+        </section>
     </form>
 
-<div class="row row-cols-2 moto_list" id='moto_list'>
-        {% for moto in motos %}
-        <section class='col my-3 border'>
-            <div class="row">
-                <div class="col">
-                    <img class="img_ocass" src="{{ asset('assets/img/' ~ moto.motoPicture) }}" alt="{{moto.MotoName}}">
-                </div>
-                <div class="col">
-                    <div class="row">
-                        <p class='text_ocass'>{{moto.id}}</p>
-                    </div>
-                    <div class="row">
-                        <p class='text_ocass'>{{moto.MotoName}}</p>
-                    </div>
-                    <div class="row">
-                        <p class='text_ocass'>{{moto.marque.name}}</p>
-                    </div>
-                    <div class="row">
-                        <p class='text_ocass'>{{moto.MotoYear}}</p>
-                    </div>
-                    {# affiche que le debut #}
-                    <div class="row">
-                        <p class='text_ocass'>{{moto.motoDesc}}</p>
-                    </div>
-                    <div class="row">
-                        <p class='text_ocass'>{{moto.MotoPrice}}</p>
-                    </div>
-                    <div class="row">
-                        <ul>
+<div class="my-5 row row-cols-1 row-cols-md-2 g-4" id="moto_list">
+{% for moto in motos %}
+  <div class="col">
+  {# card #}
+    <div class="card mb-3 text-white bg-secondary border-white">
+        <div class="row g-0">
+            <div class="col-md-4 my-auto">
+            <img  src="{{ asset('assets/img/' ~ moto.motoPicture) }}" class="img-fluid rounded-start my-auto rounded mx-1" alt="...">
+            </div>
+            <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title text-center">{{moto.MotoName}}</h5>
+                <p class="card-text text-center">{{moto.marque.name}}</p>
+                <hr class="my-1">
+                <div class="row">
+                    <div class="col">
+                        <p class="card-text text-center">Option</p>
+                        <p class="card-text">
                             {% for option in moto.MotoOption %}
                                 <li class='text_ocass'>{{ option }}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>                    
+                            {% endfor %}</p>
+                    </div>
+                    <div class="col">
+                        <p class="card-text text-center">Description</p>
+                        <p class="card-text text-center">{{moto.motoDesc}}</p>
+                    </div>
+                </div>
+                <hr class="my-1">
+                <div class="row ">
+                    <div class="col">
+                        <p class="card-text text-center">{{moto.MotoYear}}</p>
+                    </div>
+                    <div class="col">
+                        <p class="card-text text-center">{{ moto.MotoPrice|number_format(2, ',', ' ' ) }} €</p>
+                    </div>
+                </div>
+                <div class="row mt-1 ">
+                    <a class="card-text text-end" href="#">
+                        <button class="btn btn-outline-dark btn-sm">Voir plus... {{moto.id}}</button>
+                    </a>
                 </div>
             </div>
-        </section>
-        {% endfor %}
+            </div>
+        </div>
+    </div>
+  </div>
+{% endfor %}
 </div>
 
 {% endblock %}

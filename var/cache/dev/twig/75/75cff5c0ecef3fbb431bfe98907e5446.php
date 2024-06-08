@@ -108,7 +108,7 @@ class __TwigTemplate_46bed69a2c7480f83d67aacb70859e81 extends Template
             <div class=\"collapse navbar-collapse justify-content-center\" id=\"navbarSupportedContent\">
                 <ul class=\"navbar-nav mr-auto nav_background\">
                     <li class=\"nav-item moto_rel me-5\">
-                        <img class=\"moto_nav moto_left\" src=\"";
+                        <img class=\"img-fluid moto_nav moto_left\" src=\"";
         // line 43
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/navitemps.webp"), "html", null, true);
         yield "\" alt=\"Moto\" width=\"50\" height=\"50\">
@@ -129,7 +129,7 @@ class __TwigTemplate_46bed69a2c7480f83d67aacb70859e81 extends Template
                         <a class=\"nav-link nav_text\" href=\"/occasion\">Occasion</a>
                     </li>
                     <li class=\"nav-item moto_rel ms-5\">
-                        <img class=\"moto_nav moto_right\" src=\"";
+                        <img class=\"img-fluid moto_nav moto_right\" src=\"";
         // line 61
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/navitemps.webp"), "html", null, true);
         yield "\" alt=\"Moto\" width=\"50\" height=\"50\">
@@ -311,7 +311,7 @@ class __TwigTemplate_46bed69a2c7480f83d67aacb70859e81 extends Template
             <div class=\"collapse navbar-collapse justify-content-center\" id=\"navbarSupportedContent\">
                 <ul class=\"navbar-nav mr-auto nav_background\">
                     <li class=\"nav-item moto_rel me-5\">
-                        <img class=\"moto_nav moto_left\" src=\"{{ asset('assets/img/navitemps.webp') }}\" alt=\"Moto\" width=\"50\" height=\"50\">
+                        <img class=\"img-fluid moto_nav moto_left\" src=\"{{ asset('assets/img/navitemps.webp') }}\" alt=\"Moto\" width=\"50\" height=\"50\">
                     </li>
                     <li class=\"nav-item my-auto\">
                         <a class=\"nav-link nav_text\" href=\"/\">Accueil</a>
@@ -329,7 +329,7 @@ class __TwigTemplate_46bed69a2c7480f83d67aacb70859e81 extends Template
                         <a class=\"nav-link nav_text\" href=\"/occasion\">Occasion</a>
                     </li>
                     <li class=\"nav-item moto_rel ms-5\">
-                        <img class=\"moto_nav moto_right\" src=\"{{ asset('assets/img/navitemps.webp') }}\" alt=\"Moto\" width=\"50\" height=\"50\">
+                        <img class=\"img-fluid moto_nav moto_right\" src=\"{{ asset('assets/img/navitemps.webp') }}\" alt=\"Moto\" width=\"50\" height=\"50\">
                     </li>
                 </ul>
             </div>

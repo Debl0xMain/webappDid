@@ -5,3 +5,32 @@
     height: 150px !important;
     width: 150px !important;
 }
+/* Font Import */
+@font-face {
+    font-family: "text_adress";
+    src: url('../fonts/CaesarDressing-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+.harley_style {
+    color: #fff !important;
+    -webkit-text-stroke: 4px #000;
+    font-size: 3.5rem;
+    font-family: "text_adress";
+}
+.harley_style2 {
+    color: #fff !important;
+    -webkit-text-stroke: 1px #000;
+    font-size: 1.5rem;
+    font-family: "text_adress";
+}
+.img_logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 25% !important;
+
+}
+.border {
+    border: white 2px solid;
+    border-radius: 750px;
+}
