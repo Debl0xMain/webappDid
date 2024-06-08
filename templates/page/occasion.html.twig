@@ -16,14 +16,46 @@
         {% endfor %}
     </form>
 
-    <ul id="motosList">
+<div class="row row-cols-2 moto_list" id='moto_list'>
         {% for moto in motos %}
-            <li>{{ moto.motoName|e }} - {{ moto.marque.Name|e }}</li>
-        {% else %}
-            <li>No motos found.</li>
+        <section class='col my-3 border'>
+            <div class="row">
+                <div class="col">
+                    <img class="img_ocass" src="{{ asset('assets/img/' ~ moto.motoPicture) }}" alt="{{moto.MotoName}}">
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <p class='text_ocass'>{{moto.id}}</p>
+                    </div>
+                    <div class="row">
+                        <p class='text_ocass'>{{moto.MotoName}}</p>
+                    </div>
+                    <div class="row">
+                        <p class='text_ocass'>{{moto.marque.name}}</p>
+                    </div>
+                    <div class="row">
+                        <p class='text_ocass'>{{moto.MotoYear}}</p>
+                    </div>
+                    {# affiche que le debut #}
+                    <div class="row">
+                        <p class='text_ocass'>{{moto.motoDesc}}</p>
+                    </div>
+                    <div class="row">
+                        <p class='text_ocass'>{{moto.MotoPrice}}</p>
+                    </div>
+                    <div class="row">
+                        <ul>
+                            {% for option in moto.MotoOption %}
+                                <li class='text_ocass'>{{ option }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>                    
+                </div>
+            </div>
+        </section>
         {% endfor %}
-    </ul>
-    <div id="errorMessage" class="error"></div>
+</div>
+
 {% endblock %}
 
 {% block javascripts %}

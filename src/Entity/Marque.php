@@ -90,4 +90,5 @@ class Marque
 
         return $this;
     }
+
 }

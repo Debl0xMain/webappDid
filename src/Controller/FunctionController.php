@@ -48,39 +48,61 @@ class FunctionController extends AbstractController
         return new Response('Email added successfully!');
     }
     
-#[Route('/select_m', name: 'motos_par_marque', methods: ['POST'])]
-public function motosParMarque(Request $request, MotoRepository $motoRepository): JsonResponse
-{
-    $marqueIdsReceive = $request->getContent();
-    $data = json_decode($marqueIdsReceive, true);
-
-    if (!isset($data['ids']) || !is_array($data['ids']) || empty($data['ids'])) {
-        return new JsonResponse(['error' => 'Marque IDs not provided or invalid'], Response::HTTP_BAD_REQUEST);
-    }
-
-    $idsArray = $data['ids'];
-    $motos = $motoRepository->findBy(['marque' => $idsArray]);
-
-    $returnArray = [
-        'motos' => array_map(function ($moto) {
-            return [
-                'motoName' => $moto->getMotoName(),
-                'marque' => $moto->getMarque() ? $moto->getMarque()->getName() : null,
-            ];
-        }, $motos),
-    ];
-
-    return new JsonResponse($returnArray);
-}
-
-#[Route('/select_a', name: 'motos_all', methods: ['POST'])]
-public function motosAll(Request $request, MotoRepository $motoRepository): JsonResponse
-{
-    $motos = $motoRepository->findAll();
-
-    return new JsonResponse($motos);
-}
-
+    #[Route('/select_m', name: 'motos_par_marque', methods: ['POST'])]
+    public function motosParMarque(Request $request, MotoRepository $motoRepository): JsonResponse
+    {
+        $marqueIdsReceive = $request->getContent();
+        $data = json_decode($marqueIdsReceive, true);
     
+        if (!isset($data['ids']) || !is_array($data['ids']) || empty($data['ids'])) {
+            return new JsonResponse(['error' => 'Marque IDs not provided or invalid'], Response::HTTP_BAD_REQUEST);
+        }
+    
+        $idsArray = $data['ids'];
+        $motos = $motoRepository->findBy(['marque' => $idsArray]);
+    
+        $returnArray = [];
+        
+        foreach ($motos as $moto) {
+            $returnArray[] = [
+                'id' => $moto->getId(),
+                'motoName' => $moto->getMotoName(),
+                'motoYear' => $moto->getMotoYear(),
+                'motoDesc' => $moto->getMotoDesc(),
+                'motoPrice' => $moto->getMotoPrice(),
+                'motoOption' => $moto->getMotoOption(),
+                'marque' => ($moto->getMarque() ? $moto->getMarque()->getName() : null),
+                'motoPicture' => $moto->getMotoPicture(),
+                'motoCarousel' => $moto->getCarousel(),
+            ];
+        }
+    
+        return new JsonResponse($returnArray);
+    }
+    
+
+    #[Route('/select_a', name: 'motos_all', methods: ['POST'])]
+    public function motosAll(Request $request, MotoRepository $motoRepository): JsonResponse
+    {
+        $motos = $motoRepository->findAll();$motos = $motoRepository->findAll();
+        $motosInfo = [];
+        
+        foreach ($motos as $moto) {
+            $motoInfo = [
+                'id' => $moto->getId(),
+                'motoName' => $moto->getMotoName(),
+                'motoYear' => $moto->getMotoYear(),
+                'motoDesc' => $moto->getMotoDesc(),
+                'motoPrice' => $moto->getMotoPrice(),
+                'motoOption' => $moto->getMotoOption(),
+                'marque' => ($moto->getMarque() ? $moto->getMarque()->getName() : null), // Si la marque existe, on récupère son nom
+                'motoPicture' => $moto->getMotoPicture(),
+            ];
+        
+            $motosInfo[] = $motoInfo;
+        }
+        
+        return new JsonResponse($motosInfo);
+    }
 }
 

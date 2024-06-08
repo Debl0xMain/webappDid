@@ -35,6 +35,9 @@ class Moto
     #[ORM\Column(length: 255)]
     private ?string $motoPicture = null;
 
+    #[ORM\Column(type: Types::ARRAY)]
+    private array $carousel = [];
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +123,18 @@ class Moto
     public function setMotoPicture(string $motoPicture): static
     {
         $this->motoPicture = $motoPicture;
+
+        return $this;
+    }
+
+    public function getCarousel(): array
+    {
+        return $this->carousel;
+    }
+
+    public function setCarousel(array $carousel): static
+    {
+        $this->carousel = $carousel;
 
         return $this;
     }
