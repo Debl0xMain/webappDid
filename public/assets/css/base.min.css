@@ -1,0 +1,76 @@
+/* Import */
+@font-face {
+    font-family: "CaesarDressing";
+    src: url('../fonts/CaesarDressing-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+/* Background */
+#background {
+    background-image: url(../img/bg.webp);
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -150;
+    filter: brightness(50%);
+}
+
+/* NavBar */
+.nav_background {
+    background-color: rgba(0, 0, 0, 0.42);
+    border-radius: 250px;
+}
+.nav_text {
+    font-family: 'CaesarDressing', sans-serif;
+    color: white;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 15px 15px 15px black;
+    font-size: 3rem;
+}
+.nav_text:hover {
+    color: black;
+    -webkit-text-stroke: 2px white;
+}
+.moto_nav {
+    height: 7rem;
+    width: 11rem;
+}
+.moto_left {
+    transform: scaleX(-1);
+}
+
+/* NavBar Phone Device */
+@media screen and (max-width: 1000px) {
+    .nav_background {
+        background-color: rgba(0, 0, 0, 0.42);
+        border-radius: 15px;
+        width: 25%;
+    }
+    .navbar-nav {
+        justify-content: center;
+        text-align: center;
+    }
+    .nav_text {
+        font-family: 'CaesarDressing', sans-serif;
+        color: white;
+        -webkit-text-stroke: 2px black;
+        text-shadow: 15px 15px 15px black;
+        font-size: 3rem;
+    }
+    .nav_text:hover {
+        color: black;
+        -webkit-text-stroke: 2px white;
+    }
+    .moto_nav {
+        display: none;
+    }
+    .nav_point {
+        display: none;
+    }
+}

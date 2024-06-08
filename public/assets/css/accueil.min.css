@@ -1,0 +1,134 @@
+/* Animation */
+@media screen and (min-width: 1200px) {
+    @keyframes revealAnimationBot {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+    .reveal-bot {
+        animation: revealAnimationBot 3s cubic-bezier(.5, 0, 0, 1) both;
+        will-change: opacity, transform;
+    }
+
+    @keyframes revealAnimationRight {
+        0% {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+    .reveal-right {
+        animation: revealAnimationRight 3s cubic-bezier(.5, 0, 0, 1) both;
+        will-change: opacity, transform;
+    }
+
+    @keyframes revealAnimationLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+    .reveal-left {
+        animation: revealAnimationLeft 3s cubic-bezier(.5, 0, 0, 1) both;
+        will-change: opacity, transform;
+    }
+}
+
+/* Font Import */
+@font-face {
+    font-family: "text_adress";
+    src: url('../fonts/CaesarDressing-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+/* Buble */
+.acc_buble_img {
+    height: 400px;
+    width: 400px;
+}
+
+.harley_style {
+    color: #fff !important;
+    -webkit-text-stroke: 4px #000;
+    font-size: 3.5rem;
+    font-family: "text_adress";
+}
+
+/* Mobile Device */
+@media screen and (max-width: 800px) {
+    .acc_buble_img {
+        height: 300px !important;
+        width: 300px !important;
+    }
+}
+
+/* Contact */
+.joinme_background {
+    background-color: #433d3ddc;
+    border: 5px solid #95919293;
+    border-radius: 500px;
+}
+
+.icon_color,
+.adress_title,
+.adress_title_set {
+    color: #000 !important;
+    -webkit-text-stroke: 1px white;
+    font-family: "text_adress";
+}
+
+.icon_color {
+    font-size: 2.5rem;
+}
+
+.text_adress {
+    font-size: 2rem;
+    font-family: "text_adress";
+}
+
+.adress_title {
+    font-size: 2rem;
+}
+
+.inputnewletter {
+    border-radius: 25px;
+}
+
+.adress_title_set {
+    font-size: 3.5rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .joinme_background {
+        background-color: #433d3d9a;
+        border: 5px solid #95919293;
+    }
+
+    .icon_color {
+        font-size: 1.5rem;
+    }
+
+    .text_adress {
+        font-size: 1.5rem;
+    }
+
+    .adress_title {
+        font-size: 1rem;
+    }
+
+    .adress_title_set {
+        font-size: 2.5rem;
+    }
+}
