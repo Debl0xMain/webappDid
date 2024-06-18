@@ -18,8 +18,28 @@
                 </label>
             {% endfor %}
         </section>
-    </form>
 
+        <section class="border px-5 my-auto py-2 bg-secondary">
+            <h2 class="harley_style2 text-center">Filtrer par permis :</h2>
+                <label>
+                    <input type="checkbox" class="marqueCheckboxpermis" value="125">
+                   <p>125</p>
+                </label>
+                
+                <label>
+                    <input type="checkbox" class="marqueCheckboxpermis" value="a2">
+                   <p>a2</p>
+                </label>
+
+                <label>
+                    <input type="checkbox" class="marqueCheckboxpermis" value="a">
+                   <p>a</p>
+                </label>
+        </section>
+    </form>
+<pre>
+    {{ dump(motos) }}
+</pre>
 <div class="my-5 row row-cols-1 row-cols-md-2 g-4" id="moto_list">
 {% for moto in motos %}
   <div class="col">

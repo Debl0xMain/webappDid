@@ -55,10 +55,58 @@ class FunctionController extends AbstractController
         $data = json_decode($marqueIdsReceive, true);
     
         if (!isset($data['ids']) || !is_array($data['ids']) || empty($data['ids'])) {
-            return new JsonResponse(['error' => 'Marque IDs not provided or invalid'], Response::HTTP_BAD_REQUEST);
+            $idsPermis = $data['ids'];
+    
+            $motos = $motoRepository->findBy(['marque' => $idsPermis]);
+        
+            $returnArray = [];
+            
+            foreach ($motos as $moto) {
+                $returnArray[] = [
+                    'id' => $moto->getId(),
+                    'motoName' => $moto->getMotoName(),
+                    'motoYear' => $moto->getMotoYear(),
+                    'motoDesc' => $moto->getMotoDesc(),
+                    'motoPrice' => $moto->getMotoPrice(),
+                    'motoOption' => $moto->getMotoOption(),
+                    'marque' => ($moto->getMarque() ? $moto->getMarque()->getName() : null),
+                    'motoPicture' => $moto->getMotoPicture(),
+                    'motoCarousel' => $moto->getCarousel(),
+                ];
+            }
+        
+            return new JsonResponse($returnArray);
         }
+        if (!isset($data['permis']) || !is_array($data['permis']) || empty($data['permis'])) {
+            
+            $idsArray = $data['ids'];
+    
+            $motos = $motoRepository->findBy(['marque' => $idsArray]);
+        
+            $returnArray = [];
+            
+            foreach ($motos as $moto) {
+                $returnArray[] = [
+                    'id' => $moto->getId(),
+                    'motoName' => $moto->getMotoName(),
+                    'motoYear' => $moto->getMotoYear(),
+                    'motoDesc' => $moto->getMotoDesc(),
+                    'motoPrice' => $moto->getMotoPrice(),
+                    'motoOption' => $moto->getMotoOption(),
+                    'marque' => ($moto->getMarque() ? $moto->getMarque()->getName() : null),
+                    'motoPicture' => $moto->getMotoPicture(),
+                    'motoCarousel' => $moto->getCarousel(),
+                ];
+            }
+        
+            return new JsonResponse($returnArray);
+        
+        }
+        else{
     
         $idsArray = $data['ids'];
+        $idsPermis = $data['permis'];
+
         $motos = $motoRepository->findBy(['marque' => $idsArray]);
     
         $returnArray = [];
@@ -78,6 +126,8 @@ class FunctionController extends AbstractController
         }
     
         return new JsonResponse($returnArray);
+    }
+        
     }
     
 
@@ -104,5 +154,5 @@ class FunctionController extends AbstractController
         
         return new JsonResponse($motosInfo);
     }
-}
 
+}

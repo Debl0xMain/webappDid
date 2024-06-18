@@ -6,7 +6,7 @@ output_folder = 'processed_logos'
 os.makedirs(output_folder, exist_ok=True)
 
 for filename in os.listdir(input_folder):
-    if filename.endswith('.png'):
+    if filename.endswith('.jpeg'):
         img = Image.open(f'{input_folder}/{filename}')
         img = img.resize((100, 100), Image.ANTIALIAS)
         img = img.convert("RGBA")

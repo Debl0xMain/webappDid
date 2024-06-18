@@ -38,6 +38,12 @@ class Moto
     #[ORM\Column(type: Types::ARRAY)]
     private array $carousel = [];
 
+    #[ORM\Column(length: 255)]
+    private ?string $cylindre = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $permis = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -135,6 +141,30 @@ class Moto
     public function setCarousel(array $carousel): static
     {
         $this->carousel = $carousel;
+
+        return $this;
+    }
+
+    public function getCylindre(): ?string
+    {
+        return $this->cylindre;
+    }
+
+    public function setCylindre(string $cylindre): static
+    {
+        $this->cylindre = $cylindre;
+
+        return $this;
+    }
+
+    public function getPermis(): ?string
+    {
+        return $this->permis;
+    }
+
+    public function setPermis(string $permis): static
+    {
+        $this->permis = $permis;
 
         return $this;
     }
