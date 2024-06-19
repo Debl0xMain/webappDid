@@ -54,14 +54,16 @@ class FunctionController extends AbstractController
         $marqueIdsReceive = $request->getContent();
         $data = json_decode($marqueIdsReceive, true);
     
-        if (!isset($data['ids']) || !is_array($data['ids']) || empty($data['ids'])) {
-            $idsPermis = $data['ids'];
+        if (!isset($data['ids']) || !is_array($data['ids']) || empty($data['ids']) && count($data['permis']) >= 1 ) {
+            $idsPermis = $data['permis'];
     
-            $motos = $motoRepository->findBy(['marque' => $idsPermis]);
+            $motop = $motoRepository->findBy(['permis' => $idsPermis]);
+
+            dump($motop);
         
             $returnArray = [];
             
-            foreach ($motos as $moto) {
+            foreach ($motop as $moto) {
                 $returnArray[] = [
                     'id' => $moto->getId(),
                     'motoName' => $moto->getMotoName(),
@@ -77,7 +79,7 @@ class FunctionController extends AbstractController
         
             return new JsonResponse($returnArray);
         }
-        if (!isset($data['permis']) || !is_array($data['permis']) || empty($data['permis'])) {
+        if (!isset($data['permis']) || !is_array($data['permis']) || empty($data['permis']) && count($data['ids']) >= 1) {
             
             $idsArray = $data['ids'];
     
@@ -107,7 +109,7 @@ class FunctionController extends AbstractController
         $idsArray = $data['ids'];
         $idsPermis = $data['permis'];
 
-        $motos = $motoRepository->findBy(['marque' => $idsArray]);
+        $motos = $motoRepository->findBy(['marque' => $idsArray,'permis' => $idsPermis]);
     
         $returnArray = [];
         
@@ -122,9 +124,10 @@ class FunctionController extends AbstractController
                 'marque' => ($moto->getMarque() ? $moto->getMarque()->getName() : null),
                 'motoPicture' => $moto->getMotoPicture(),
                 'motoCarousel' => $moto->getCarousel(),
+                'permis' => $moto->getPermis(),
             ];
         }
-    
+ 
         return new JsonResponse($returnArray);
     }
         

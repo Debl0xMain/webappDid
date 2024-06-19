@@ -33,6 +33,7 @@ class PageController extends AbstractController
     {
         $motos = $motoRepository->findAll();
         $marquesArray = [];
+        $permisArray = [];
 
         foreach ($motos as $moto) {
             $marque = $moto->getMarque();
@@ -53,10 +54,29 @@ class PageController extends AbstractController
                 }
             }
         }
+        foreach ($motos as $moto) {
+            $permis = $moto->getPermis();
+            if ($permis !== null) {
+                $permis = $moto->getPermis();
+                
+                $permisExists = false;
+                foreach ($permisArray as $permisData) {
+                    if ($permisData['name'] === $permis) {
+                        $permisExists = true;
+                        break;
+                    }
+                }
+
+                if (!$permisExists) {
+                    $permisArray[] = ['name' => $permis];
+                }
+            }
+        }
 
         return $this->render('page/occasion.html.twig', [
             'motos' => $motos,
-            "marques" => $marquesArray
+            "marques" => $marquesArray,
+            "permis" => $permisArray
         ]);
     }
 }

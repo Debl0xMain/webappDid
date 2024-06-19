@@ -130,55 +130,57 @@ class __TwigTemplate_224975ca8046227dc56f0f3b05a0e80a extends Template
 
         <section class=\"border px-5 my-auto py-2 bg-secondary\">
             <h2 class=\"harley_style2 text-center\">Filtrer par permis :</h2>
-                <label>
-                    <input type=\"checkbox\" class=\"marqueCheckboxpermis\" value=\"125\">
-                   <p>125</p>
+            ";
+        // line 24
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable($context["permis"]);
+        foreach ($context['_seq'] as $context["_key"] => $context["permis"]) {
+            // line 25
+            yield "                <label>
+                    <input type=\"checkbox\" class=\"marqueCheckboxpermis\" value=\"";
+            // line 26
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["permis"], "name", [], "any", false, false, false, 26), "html", null, true);
+            yield "\">
+                   <p>";
+            // line 27
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["permis"], "name", [], "any", false, false, false, 27), "html", null, true);
+            yield "</p>
                 </label>
-                
-                <label>
-                    <input type=\"checkbox\" class=\"marqueCheckboxpermis\" value=\"a2\">
-                   <p>a2</p>
-                </label>
-
-                <label>
-                    <input type=\"checkbox\" class=\"marqueCheckboxpermis\" value=\"a\">
-                   <p>a</p>
-                </label>
-        </section>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['permis'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 30
+        yield "        </section>
     </form>
-<pre>
-    ";
-        // line 41
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\DumpExtension']->dump($this->env, $context, (isset($context["motos"]) || array_key_exists("motos", $context) ? $context["motos"] : (function () { throw new RuntimeError('Variable "motos" does not exist.', 41, $this->source); })()));
-        yield "
-</pre>
 <div class=\"my-5 row row-cols-1 row-cols-md-2 g-4\" id=\"moto_list\">
 ";
-        // line 44
+        // line 33
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["motos"]) || array_key_exists("motos", $context) ? $context["motos"] : (function () { throw new RuntimeError('Variable "motos" does not exist.', 44, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["motos"]) || array_key_exists("motos", $context) ? $context["motos"] : (function () { throw new RuntimeError('Variable "motos" does not exist.', 33, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["moto"]) {
-            // line 45
+            // line 34
             yield "  <div class=\"col\">
   ";
-            // line 47
+            // line 36
             yield "    <div class=\"card mb-3 text-white bg-secondary border-white\">
         <div class=\"row g-0\">
             <div class=\"col-md-4 my-auto\">
             <img  src=\"";
-            // line 50
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/img/" . CoreExtension::getAttribute($this->env, $this->source, $context["moto"], "motoPicture", [], "any", false, false, false, 50))), "html", null, true);
+            // line 39
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/img/" . CoreExtension::getAttribute($this->env, $this->source, $context["moto"], "motoPicture", [], "any", false, false, false, 39))), "html", null, true);
             yield "\" class=\"img-fluid rounded-start my-auto rounded mx-1\" alt=\"...\">
             </div>
             <div class=\"col-md-8\">
             <div class=\"card-body\">
                 <h5 class=\"card-title text-center\">";
-            // line 54
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["moto"], "MotoName", [], "any", false, false, false, 54), "html", null, true);
+            // line 43
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["moto"], "MotoName", [], "any", false, false, false, 43), "html", null, true);
             yield "</h5>
                 <p class=\"card-text text-center\">";
-            // line 55
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["moto"], "marque", [], "any", false, false, false, 55), "name", [], "any", false, false, false, 55), "html", null, true);
+            // line 44
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, $context["moto"], "marque", [], "any", false, false, false, 44), "name", [], "any", false, false, false, 44), "html", null, true);
             yield "</p>
                 <hr class=\"my-1\">
                 <div class=\"row\">
@@ -186,11 +188,11 @@ class __TwigTemplate_224975ca8046227dc56f0f3b05a0e80a extends Template
                         <p class=\"card-text text-center\">Option</p>
                         <p class=\"card-text\">
                             ";
-            // line 61
+            // line 50
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, $context["moto"], "MotoOption", [], "any", false, false, false, 61));
+            $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, $context["moto"], "MotoOption", [], "any", false, false, false, 50));
             foreach ($context['_seq'] as $context["_key"] => $context["option"]) {
-                // line 62
+                // line 51
                 yield "                                <li class='text_ocass'>";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["option"], "html", null, true);
                 yield "</li>
@@ -199,14 +201,14 @@ class __TwigTemplate_224975ca8046227dc56f0f3b05a0e80a extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['option'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 63
+            // line 52
             yield "</p>
                     </div>
                     <div class=\"col\">
                         <p class=\"card-text text-center\">Description</p>
                         <p class=\"card-text text-center\">";
-            // line 67
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["moto"], "motoDesc", [], "any", false, false, false, 67), "html", null, true);
+            // line 56
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["moto"], "motoDesc", [], "any", false, false, false, 56), "html", null, true);
             yield "</p>
                     </div>
                 </div>
@@ -214,22 +216,22 @@ class __TwigTemplate_224975ca8046227dc56f0f3b05a0e80a extends Template
                 <div class=\"row \">
                     <div class=\"col\">
                         <p class=\"card-text text-center\">";
-            // line 73
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["moto"], "MotoYear", [], "any", false, false, false, 73), "html", null, true);
+            // line 62
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["moto"], "MotoYear", [], "any", false, false, false, 62), "html", null, true);
             yield "</p>
                     </div>
                     <div class=\"col\">
                         <p class=\"card-text text-center\">";
-            // line 76
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatNumber(CoreExtension::getAttribute($this->env, $this->source, $context["moto"], "MotoPrice", [], "any", false, false, false, 76), 2, ",", " "), "html", null, true);
+            // line 65
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatNumber(CoreExtension::getAttribute($this->env, $this->source, $context["moto"], "MotoPrice", [], "any", false, false, false, 65), 2, ",", " "), "html", null, true);
             yield " €</p>
                     </div>
                 </div>
                 <div class=\"row mt-1 \">
                     <a class=\"card-text text-end\" href=\"#\">
                         <button class=\"btn btn-outline-dark btn-sm\">Voir plus... ";
-            // line 81
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["moto"], "id", [], "any", false, false, false, 81), "html", null, true);
+            // line 70
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["moto"], "id", [], "any", false, false, false, 70), "html", null, true);
             yield "</button>
                     </a>
                 </div>
@@ -243,7 +245,7 @@ class __TwigTemplate_224975ca8046227dc56f0f3b05a0e80a extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['moto'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 90
+        // line 79
         yield "</div>
 
 ";
@@ -256,7 +258,7 @@ class __TwigTemplate_224975ca8046227dc56f0f3b05a0e80a extends Template
         return; yield '';
     }
 
-    // line 94
+    // line 83
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -266,7 +268,7 @@ class __TwigTemplate_224975ca8046227dc56f0f3b05a0e80a extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 95
+        // line 84
         yield "    <script src=\"";
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/select.min.js"), "html", null, true);
         yield "\"></script>
@@ -301,7 +303,7 @@ class __TwigTemplate_224975ca8046227dc56f0f3b05a0e80a extends Template
      */
     public function getDebugInfo()
     {
-        return array (  270 => 95,  260 => 94,  247 => 90,  232 => 81,  224 => 76,  218 => 73,  209 => 67,  203 => 63,  194 => 62,  190 => 61,  181 => 55,  177 => 54,  170 => 50,  165 => 47,  162 => 45,  158 => 44,  152 => 41,  129 => 20,  116 => 17,  111 => 16,  109 => 15,  106 => 14,  102 => 13,  95 => 8,  85 => 7,  71 => 4,  61 => 3,  38 => 1,);
+        return array (  272 => 84,  262 => 83,  249 => 79,  234 => 70,  226 => 65,  220 => 62,  211 => 56,  205 => 52,  196 => 51,  192 => 50,  183 => 44,  179 => 43,  172 => 39,  167 => 36,  164 => 34,  160 => 33,  155 => 30,  146 => 27,  142 => 26,  139 => 25,  135 => 24,  129 => 20,  116 => 17,  111 => 16,  109 => 15,  106 => 14,  102 => 13,  95 => 8,  85 => 7,  71 => 4,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -329,25 +331,14 @@ class __TwigTemplate_224975ca8046227dc56f0f3b05a0e80a extends Template
 
         <section class=\"border px-5 my-auto py-2 bg-secondary\">
             <h2 class=\"harley_style2 text-center\">Filtrer par permis :</h2>
+            {% for permis in permis %}
                 <label>
-                    <input type=\"checkbox\" class=\"marqueCheckboxpermis\" value=\"125\">
-                   <p>125</p>
+                    <input type=\"checkbox\" class=\"marqueCheckboxpermis\" value=\"{{permis.name}}\">
+                   <p>{{permis.name}}</p>
                 </label>
-                
-                <label>
-                    <input type=\"checkbox\" class=\"marqueCheckboxpermis\" value=\"a2\">
-                   <p>a2</p>
-                </label>
-
-                <label>
-                    <input type=\"checkbox\" class=\"marqueCheckboxpermis\" value=\"a\">
-                   <p>a</p>
-                </label>
+            {% endfor %}
         </section>
     </form>
-<pre>
-    {{ dump(motos) }}
-</pre>
 <div class=\"my-5 row row-cols-1 row-cols-md-2 g-4\" id=\"moto_list\">
 {% for moto in motos %}
   <div class=\"col\">

@@ -242,9 +242,9 @@ class AppFixtures extends Fixture
         // Moto
         $motos = [
             ['motoName' => 'YZF-R1', 'motoYear' => 2011, 'motoDesc' => 'High-performance sport bike', 'motoPrice' => '15000.00', 'motoOption' => ['ABS', 'Traction Control'], 'marque' => 'Yamaha', 'motoPicture' => 'moto1.png', 'carousel' => ['moto1.png', 'moto2.png', 'moto3.png'], 'cylindre' => '1200cc', 'permis' => 'a2'],
-            ['motoName' => 'YZF-R6', 'motoYear' => 2011, 'motoDesc' => 'High-performance sport bike', 'motoPrice' => '15000.00', 'motoOption' => ['ABS', 'Traction Control'], 'marque' => 'Yamaha', 'motoPicture' => 'moto1.png', 'carousel' => ['moto1.png', 'moto2.png', 'moto3.png'], 'cylindre' => '1200cc', 'permis' => 'a1'],
-            ['motoName' => 'CBR1000RR', 'motoYear' => 2015, 'motoDesc' => 'Powerful and agile', 'motoPrice' => '14000.00', 'motoOption' => ['Quick Shifter', 'ABS'], 'marque' => 'Honda', 'motoPicture' => 'moto2.png', 'carousel' => ['moto1.png', 'moto2.png', 'moto3.png'], 'cylindre' => '1200cc', 'permis' => '125cc'],
-            ['motoName' => 'Ninja ZX-10R', 'motoYear' => 1999, 'motoDesc' => 'Track-focused', 'motoPrice' => '14500.00', 'motoOption' => ['Launch Control', 'Traction Control'], 'marque' => 'Kawasaki', 'motoPicture' => 'moto3.png', 'carousel' => ['moto1.png', 'moto2.png', 'moto3.png'], 'cylindre' => '1200cc', 'permis' => 'a1']
+            ['motoName' => 'YZF-R6', 'motoYear' => 2011, 'motoDesc' => 'High-performance sport bike', 'motoPrice' => '15000.00', 'motoOption' => ['ABS', 'Traction Control'], 'marque' => 'Yamaha', 'motoPicture' => 'moto1.png', 'carousel' => ['moto1.png', 'moto2.png', 'moto3.png'], 'cylindre' => '1200cc', 'permis' => 'a'],
+            ['motoName' => 'CBR1000RR', 'motoYear' => 2015, 'motoDesc' => 'Powerful and agile', 'motoPrice' => '14000.00', 'motoOption' => ['Quick Shifter', 'ABS'], 'marque' => 'Honda', 'motoPicture' => 'moto2.png', 'carousel' => ['moto1.png', 'moto2.png', 'moto3.png'], 'cylindre' => '1200cc', 'permis' => '125'],
+            ['motoName' => 'Ninja ZX-10R', 'motoYear' => 1999, 'motoDesc' => 'Track-focused', 'motoPrice' => '14500.00', 'motoOption' => ['Launch Control', 'Traction Control'], 'marque' => 'Kawasaki', 'motoPicture' => 'moto3.png', 'carousel' => ['moto1.png', 'moto2.png', 'moto3.png'], 'cylindre' => '1200cc', 'permis' => 'a']
         ];
         
 

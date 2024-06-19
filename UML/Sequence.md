@@ -46,5 +46,3 @@
 
     Aucun moto n'est disponible pour ce permis
     Le systheme n'affichera pas le type de permis dans le systheme de trie
-
-
