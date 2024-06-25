@@ -11,6 +11,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class PageController extends AbstractController
 {
+    private $motoRepository;
+    private $CategoryRepository;
+    private $MarquesRepository;
+
+    public function __construct(CategoryRepository $CategoryRepository,MotoRepository $motoRepository,MarqueRepository $MarquesRepository)
+    {   
+        $this->motoRepository = $motoRepository;
+        $this->CategoryRepository = $CategoryRepository;
+        $this->MarquesRepository = $MarquesRepository;
+
+    }
+
     #[Route('/', name: 'app_accueil')]
     public function index(): Response
     {
@@ -20,18 +32,18 @@ class PageController extends AbstractController
     }
 
     #[Route('/catalogue', name: 'catalogue')]
-    public function catalogue(CategoryRepository $categoryRepository): Response
+    public function catalogue(): Response
     {
-        $categories = $categoryRepository->findAll();
+        $categories = $this->CategoryRepository->findAll();
         return $this->render('page/catalogue.html.twig', [
             'categories' => $categories,
         ]);
     }
 
     #[Route('/occasion', name: 'app_occasion')]
-    public function occasion(MotoRepository $motoRepository, MarqueRepository $MarquesRepository): Response
+    public function occasion(): Response
     {
-        $motos = $motoRepository->findAll();
+        $motos = $this->motoRepository->findAll();
         $marquesArray = [];
         $permisArray = [];
 
@@ -77,6 +89,16 @@ class PageController extends AbstractController
             'motos' => $motos,
             "marques" => $marquesArray,
             "permis" => $permisArray
+        ]);
+    }
+
+    #[Route('/occasion/{moto_id}', name: 'app_detail_occasion')]
+    public function detail_occasion(int $moto_id): Response
+    {
+        $MotoFind = $this->motoRepository->findby([$moto_id => "id"]);
+
+        return $this->render('page/catalogue.html.twig', [
+            'MotoFind' => $MotoFind,
         ]);
     }
 }

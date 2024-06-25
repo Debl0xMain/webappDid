@@ -371,6 +371,7 @@
       <tag name="container.service_subscriber"/>
       <argument type="service" id="App\Repository\NewletterRepository"/>
       <argument type="service" id="debug.validator"/>
+      <argument type="service" id="App\Repository\MotoRepository"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.8FV7jiY.App\Controller\FunctionController"/>
       </call>
@@ -378,6 +379,9 @@
     <service id="App\Controller\PageController" class="App\Controller\PageController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="App\Repository\CategoryRepository"/>
+      <argument type="service" id="App\Repository\MotoRepository"/>
+      <argument type="service" id="App\Repository\MarqueRepository"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.8FV7jiY.App\Controller\PageController"/>
       </call>
@@ -442,7 +446,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.VjdI5Kw"/>
+      <argument type="service" id=".service_locator.6zFdP3L"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3337,7 +3341,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.VjdI5Kw"/>
+      <argument type="service" id=".service_locator.6zFdP3L"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -7664,64 +7668,13 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.4wc4Ag1" method="withContext"/>
     </service>
-    <service id=".service_locator.hznGe2U" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.6zFdP3L" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="motoRepository" type="service_closure" id="App\Repository\MotoRepository"/>
-      </argument>
-    </service>
-    <service id=".service_locator.hznGe2U.App\Controller\FunctionController::motosParMarque()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\FunctionController::motosParMarque()"/>
-      <argument>App\Controller\FunctionController::motosParMarque()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.hznGe2U" method="withContext"/>
-    </service>
-    <service id=".service_locator.hznGe2U.App\Controller\FunctionController::motosAll()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\FunctionController::motosAll()"/>
-      <argument>App\Controller\FunctionController::motosAll()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.hznGe2U" method="withContext"/>
-    </service>
-    <service id=".service_locator.MEncpnc" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="categoryRepository" type="service_closure" id="App\Repository\CategoryRepository"/>
-      </argument>
-    </service>
-    <service id=".service_locator.MEncpnc.App\Controller\PageController::catalogue()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\PageController::catalogue()"/>
-      <argument>App\Controller\PageController::catalogue()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.MEncpnc" method="withContext"/>
-    </service>
-    <service id=".service_locator.00epxik" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="MarquesRepository" type="service_closure" id="App\Repository\MarqueRepository"/>
-        <argument key="motoRepository" type="service_closure" id="App\Repository\MotoRepository"/>
-      </argument>
-    </service>
-    <service id=".service_locator.00epxik.App\Controller\PageController::occasion()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\PageController::occasion()"/>
-      <argument>App\Controller\PageController::occasion()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.00epxik" method="withContext"/>
-    </service>
-    <service id=".service_locator.VjdI5Kw" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="App\Controller\FunctionController::motosAll" type="service_closure" id=".service_locator.hznGe2U.App\Controller\FunctionController::motosAll()"/>
-        <argument key="App\Controller\FunctionController::motosParMarque" type="service_closure" id=".service_locator.hznGe2U.App\Controller\FunctionController::motosParMarque()"/>
-        <argument key="App\Controller\PageController::catalogue" type="service_closure" id=".service_locator.MEncpnc.App\Controller\PageController::catalogue()"/>
-        <argument key="App\Controller\PageController::occasion" type="service_closure" id=".service_locator.00epxik.App\Controller\PageController::occasion()"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.4wc4Ag1.kernel::loadRoutes()"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.4wc4Ag1.kernel::loadRoutes()"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
-        <argument key="App\Controller\FunctionController:motosAll" type="service_closure" id=".service_locator.hznGe2U.App\Controller\FunctionController::motosAll()"/>
-        <argument key="App\Controller\FunctionController:motosParMarque" type="service_closure" id=".service_locator.hznGe2U.App\Controller\FunctionController::motosParMarque()"/>
-        <argument key="App\Controller\PageController:catalogue" type="service_closure" id=".service_locator.MEncpnc.App\Controller\PageController::catalogue()"/>
-        <argument key="App\Controller\PageController:occasion" type="service_closure" id=".service_locator.00epxik.App\Controller\PageController::occasion()"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.4wc4Ag1.kernel::loadRoutes()"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
       </argument>
@@ -9826,7 +9779,7 @@
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.1W6W_dF" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.VjdI5Kw"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.6zFdP3L"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -9869,9 +9822,6 @@
     <service id="messenger.bus.default" alias="debug.traced.messenger.bus.default"/>
     <service id="doctrine.orm.default_metadata_driver" alias=".doctrine.orm.default_metadata_driver"/>
     <service id=".service_locator.diNoEIK" alias=".service_locator.4wc4Ag1"/>
-    <service id=".service_locator.I2XXBLk" alias=".service_locator.hznGe2U"/>
-    <service id=".service_locator.ry8PWkS" alias=".service_locator.MEncpnc"/>
-    <service id=".service_locator.8LF.4Xv" alias=".service_locator.00epxik"/>
     <service id=".service_locator.x0dPowd" alias=".service_locator.8FV7jiY"/>
   </services>
 </container>
