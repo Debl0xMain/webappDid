@@ -95,9 +95,9 @@ class PageController extends AbstractController
     #[Route('/occasion/{moto_id}', name: 'app_detail_occasion')]
     public function detail_occasion(int $moto_id): Response
     {
-        $MotoFind = $this->motoRepository->findby([$moto_id => "id"]);
+        $MotoFind = $this->motoRepository->findby(["id" => $moto_id]);
 
-        return $this->render('page/catalogue.html.twig', [
+        return $this->render('page/ocassion_detail.html.twig', [
             'MotoFind' => $MotoFind,
         ]);
     }

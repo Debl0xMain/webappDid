@@ -1,0 +1,98 @@
+@startuml
+
+!define table(x) entity x << (T, white) >>
+!define primary_key(x) <b><&key> x</b>
+!define column(x) <&media-record> x
+
+skinparam backgroundcolor White
+skinparam class {
+  BackgroundColor GhostWhite
+  ArrowColor Black
+  BorderColor Gray
+}
+skinparam shadowing false
+skinparam legend {
+  backgroundColor #GhostWhite
+  entrySeparator #GhostWhite
+}
+
+class Produits {
+  primary_key( id ) : int
+  -produitName : string 
+  -produitDesc : string 
+  -produitCaract : string 
+  -produitPrice : string 
+  -produitPicture : string 
+}
+
+class Category {
+  primary_key( id ) : int
+  -catName : string 
+  -pictureName : string 
+}
+
+class Subcategory {
+  primary_key( id ) : int
+  -subName : string 
+  -subPictureName : string 
+}
+
+class Newletter {
+  primary_key( id ) : int
+  -mailList : string 
+}
+
+class Moto {
+  primary_key( id ) : int
+  -motoName : string 
+  -motoYear : int 
+  -motoDesc : string 
+  -motoPrice : string 
+  -motoOption : array 
+  -motoPicture : string 
+  -carousel : array 
+  -cylindre : string 
+  -permis : string 
+}
+
+class User {
+  primary_key( id ) : int
+  -username : string 
+  -roles : array 
+  -password : string 
+}
+
+class Marque {
+  primary_key( id ) : int
+  -Name : string 
+  -pictureName : string 
+}
+
+Produits "*" -- "1" Subcategory
+Subcategory "*" -- "1" Category
+Moto "*" -- "1" Marque
+
+package Legend {
+  legend
+    <#GhostWhite,#GhostWhite>|= Color |= Group |
+  end legend
+  class Class {
+    -privateAttribute:type
+    #protectedAttribute:type
+    +publicAttribute:type
+    -privateMethod()
+    #protectedMethod()
+    +publicMethod()
+  }
+
+  abstract Abstract {
+    attribute:type
+  }
+}
+
+note top of Legend
+  This document complies with plantuml.com recommendations
+  (See https://plantuml.com/en/class-diagram).
+end note
+
+@enduml
