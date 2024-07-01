@@ -16,7 +16,7 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerXPEiMOI\App_KernelDevDebugContainer([
     'container.build_hash' => 'XPEiMOI',
-    'container.build_id' => '5b6371ba',
-    'container.build_time' => 1719305676,
+    'container.build_id' => '20a8197d',
+    'container.build_time' => 1719819011,
     'container.runtime_mode' => \in_array(\PHP_SAPI, ['cli', 'phpdbg', 'embed'], true) ? 'web=0' : 'web=1',
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerXPEiMOI');

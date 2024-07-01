@@ -232,10 +232,7 @@ class __TwigTemplate_224975ca8046227dc56f0f3b05a0e80a extends Template
             // line 69
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_detail_occasion", ["moto_id" => CoreExtension::getAttribute($this->env, $this->source, $context["moto"], "id", [], "any", false, false, false, 69)]), "html", null, true);
             yield "\">
-                        <button class=\"btn btn-outline-dark btn-sm\">Voir plus... ";
-            // line 70
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["moto"], "id", [], "any", false, false, false, 70), "html", null, true);
-            yield "</button>
+                        <button class=\"btn btn-outline-dark btn-sm\">Voir plus</button>
                     </a>
                 </div>
             </div>
@@ -306,7 +303,7 @@ class __TwigTemplate_224975ca8046227dc56f0f3b05a0e80a extends Template
      */
     public function getDebugInfo()
     {
-        return array (  275 => 84,  265 => 83,  252 => 79,  237 => 70,  233 => 69,  226 => 65,  220 => 62,  211 => 56,  205 => 52,  196 => 51,  192 => 50,  183 => 44,  179 => 43,  172 => 39,  167 => 36,  164 => 34,  160 => 33,  155 => 30,  146 => 27,  142 => 26,  139 => 25,  135 => 24,  129 => 20,  116 => 17,  111 => 16,  109 => 15,  106 => 14,  102 => 13,  95 => 8,  85 => 7,  71 => 4,  61 => 3,  38 => 1,);
+        return array (  272 => 84,  262 => 83,  249 => 79,  233 => 69,  226 => 65,  220 => 62,  211 => 56,  205 => 52,  196 => 51,  192 => 50,  183 => 44,  179 => 43,  172 => 39,  167 => 36,  164 => 34,  160 => 33,  155 => 30,  146 => 27,  142 => 26,  139 => 25,  135 => 24,  129 => 20,  116 => 17,  111 => 16,  109 => 15,  106 => 14,  102 => 13,  95 => 8,  85 => 7,  71 => 4,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -380,7 +377,7 @@ class __TwigTemplate_224975ca8046227dc56f0f3b05a0e80a extends Template
                 </div>
                 <div class=\"row mt-1 \">
                     <a class=\"card-text text-end\" href=\"{{ path(\"app_detail_occasion\", {\"moto_id\" :moto.id }) }}\">
-                        <button class=\"btn btn-outline-dark btn-sm\">Voir plus... {{moto.id}}</button>
+                        <button class=\"btn btn-outline-dark btn-sm\">Voir plus</button>
                     </a>
                 </div>
             </div>

@@ -1,41 +1,80 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-
+<link rel="stylesheet" href="{{ asset('assets/css/occasion_detail.min.css') }}">
 {% endblock %}
 
 {% block body %}
-<pre>
-    {{ dump(MotoFind) }}
-</pre>
+
 {% for moto in MotoFind %}
-    <h1>{{moto.motoName}}</h1>
+    <h1 class="moto_title text-center">{{moto.motoName}}</h1>
 
 {# Carrousel photo #}
+<div class="block_responsive row">
 
-<section class="carrousel">
-    <div id="carouselExampleIndicators" class="carousel slide">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img  src="{{ asset('assets/img/' ~ moto.motoPicture) }}" class="img-fluid rounded-start my-auto rounded mx-1" alt="{{moto.motoPicture}}">
-        </div>
-        {% for img in moto.carousel %}
-            <div class="carousel-item">
-                <img src="{{ asset('assets/img/' ~ img) }}"class="d-block w-100" alt="{{img}}">
+    <section class="carrousel size_carrousel col rounded">
+        <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img  src="{{ asset('assets/img/' ~ moto.motoPicture) }}" class="img-fluid rounded-start my-auto rounded mx-1 img_carrousel" alt="{{moto.motoPicture}}">
             </div>
-        {% endfor %}
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-    </div>
-</section>
+            {% for img in moto.carousel %}
+                <div class="carousel-item">
+                    <img src="{{ asset('assets/img/' ~ img) }}" class="d-block w-100 rounded" alt="{{img}}">
+                </div>
+            {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        </div>
+    </section>
 
+    <section class="col text-center text_bg bg-secondary border-white border rounded">
+        <div class="row mt-4">
+            <div class="col">
+                <p class='text_desc'>Marque : {{ moto.marque }}</p>
+            </div>
+            <div class="col">
+                <p class='text_desc'>Année : {{ moto.motoYear }}</p>
+            </div>
+        </div>
+        <hr class="text_desc">
+        <div class="row">
+            <div class="col">
+                <p class='text_desc'>Prix : {{ moto.motoPrice|number_format(2, ',', ' ' ) }}€</p>
+            </div>
+            <div class="col">
+                <p class='text_desc'>Cylindrée : {{ moto.cylindre }}</p>
+            </div>    
+        </div>
+        <hr class="text_desc">
+        <div class="row">
+            <div class="col">
+                <p class='text_desc'>Permis : {{ moto.permis }}</p>
+            </div>
+        </div>
+        <hr class="text_desc">
+        <div class="row">
+            <div class="col">
+            <p class="text_desc my-2">Option :</p>
+            <ul class="text_desc mx-2">
+            {% for option in moto.motoOption %}
+                <li>{{ option }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        <div class="col">
+            <p class='text_desc my-2'>Description :</p>
+            <p class='text_desc'>{{ moto.motoDesc }}</p>
+        </div>
+    </section>
+</div>
 {% endfor %}
 
 

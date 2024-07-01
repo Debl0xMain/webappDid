@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "text_adress";
+    src: url('../fonts/CaesarDressing-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+.moto_title {
+    color: white;
+    font-family: 'text_adress';
+}
+.text_desc {
+    color: white;
+}
+
+.img_carrousel {
+    height: 600px !important;
+}
+
+.size_carrousel {
+    height: 600px !important;
+}
+.carousel-control-next-icon {
+    background-color: black;
+    border-radius: 250px;
+}
+.carousel-control-prev-icon {
+    background-color: black;
+    border-radius: 250px;
+}
