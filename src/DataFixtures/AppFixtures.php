@@ -24,9 +24,9 @@ class AppFixtures extends Fixture
     {
         // Categories
         $categories = [
-            ['catName' => 'huile', 'pictureName' => 'huile.jpg'],
-            ['catName' => 'Liquide Frein', 'pictureName' => 'Liquide.jpg'],
-            ['catName' => 'Piece Moteur', 'pictureName' => 'Piece.jpg']
+            ['catName' => 'huile', 'pictureName' => 'huile.png'],
+            ['catName' => 'Liquide Frein', 'pictureName' => 'Liquide.png'],
+            ['catName' => 'Piece Moteur', 'pictureName' => 'Piece.png']
         ];
 
         foreach ($categories as $catData) {
@@ -40,9 +40,9 @@ class AppFixtures extends Fixture
 
         // Subcategories
         $subCategories = [
-            ['subName' => 'huile', 'subPictureName' => 'huile.jpg', 'category' => 'huile'],
-            ['subName' => 'Liquide frein', 'subPictureName' => 'Liquide.jpg', 'category' => 'Liquide Frein'],
-            ['subName' => 'Echappement', 'subPictureName' => 'Piece.jpg', 'category' => 'Piece Moteur']
+            ['subName' => 'huile', 'subPictureName' => 'huile.png', 'category' => 'huile'],
+            ['subName' => 'Liquide frein', 'subPictureName' => 'Liquide.png', 'category' => 'Liquide Frein'],
+            ['subName' => 'Echappement', 'subPictureName' => 'Piece.png', 'category' => 'Piece Moteur']
         ];
 
         foreach ($subCategories as $subData) {
@@ -57,9 +57,9 @@ class AppFixtures extends Fixture
 
         // Produits
         $produits = [
-            ['produitName' => 'huile', 'produitDesc' => 'huile qualite', 'produitCaract' => 'DOT approved', 'produitPrice' => '200.00', 'produitPicture' => 'huile.jpg', 'subcategory' => 'huile'],
-            ['produitName' => 'Liquide frein', 'produitDesc' => 'bien efficasse', 'produitCaract' => 'CE certified', 'produitPrice' => '300.00', 'produitPicture' => 'Liquide.jpg', 'subcategory' => 'Liquide frein'],
-            ['produitName' => 'Echappement', 'produitDesc' => 'Beau Bruit', 'produitCaract' => 'Waterproof', 'produitPrice' => '150.00', 'produitPicture' => 'Echappement.jpg', 'subcategory' => 'Echappement']
+            ['produitName' => 'huile', 'produitDesc' => 'huile qualite', 'produitCaract' => 'DOT approved', 'produitPrice' => '200.00', 'produitPicture' => 'huile.png', 'subcategory' => 'huile'],
+            ['produitName' => 'Liquide frein', 'produitDesc' => 'bien efficasse', 'produitCaract' => 'CE certified', 'produitPrice' => '300.00', 'produitPicture' => 'Liquide.png', 'subcategory' => 'Liquide frein'],
+            ['produitName' => 'Echappement', 'produitDesc' => 'Beau Bruit', 'produitCaract' => 'Waterproof', 'produitPrice' => '150.00', 'produitPicture' => 'Echappement.png', 'subcategory' => 'Echappement']
         ];
 
         foreach ($produits as $produitData) {

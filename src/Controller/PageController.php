@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Repository\MotoRepository;
 use App\Repository\MarqueRepository;
 use App\Repository\CategoryRepository;
+use App\Repository\ProduitsRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,13 +15,14 @@ class PageController extends AbstractController
     private $motoRepository;
     private $CategoryRepository;
     private $MarquesRepository;
+    private $produitRepository;
 
-    public function __construct(CategoryRepository $CategoryRepository,MotoRepository $motoRepository,MarqueRepository $MarquesRepository)
+    public function __construct(CategoryRepository $CategoryRepository,MotoRepository $motoRepository,MarqueRepository $MarquesRepository,ProduitsRepository $produitRepository)
     {   
         $this->motoRepository = $motoRepository;
         $this->CategoryRepository = $CategoryRepository;
         $this->MarquesRepository = $MarquesRepository;
-
+        $this->produitRepository = $produitRepository;
     }
 
     #[Route('/', name: 'app_accueil')]
@@ -101,4 +103,15 @@ class PageController extends AbstractController
             'MotoFind' => $MotoFind,
         ]);
     }
+
+    #[Route('/produits/{subcat}', name: 'app_produit_catalogue')]
+    public function  produit_catalogue(int $subcat): Response
+    {
+        $ProduitFind = $this->produitRepository->findby(["produit_relation" => $subcat]);
+
+        return $this->render('page/produits.html.twig', [
+            'produits' => $ProduitFind,
+        ]);
+    }
+
 }

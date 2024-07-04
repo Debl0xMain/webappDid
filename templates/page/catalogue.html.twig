@@ -8,39 +8,39 @@
 
 {% block body %}
     <h1>Catalogue</h1>
-    <ul id="categories">
+
+<section class="row g-4">
         {% for category in categories %}
-            <li class="category" data-category-id="{{ category.id }}">
-                <h2>{{ category.catName }}</h2>
-                <ul class="subcategories" style="display: none;">
-                    {% for subcategory in category.subCategories %}
-                        <li class="subcategory" data-subcategory-id="{{ subcategory.id }}">
-                            <h3>{{ subcategory.subName }}</h3>
-                            <ul class="products" style="display: none;">
-                                {% for product in subcategory.produits %}
-                                    <li>{{ product.produitName }} - {{ product.produitDesc }} - {{ product.produitPrice }}</li>
-                                {% endfor %}
-                            </ul>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </li>
+<div class="colc col-md-4 ">
+  <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#colls{{ category.id }}" aria-expanded="false" aria-controls="{{ category.id }}">
+        <div class="card bg-secondary border border-white">
+            <img src="{{ asset('assets/img/' ~ category.PictureName ) }}" class="mx-auto mt-2 card-img-top size_img" alt="{{ category.catName }}">
+            <div class="card-body">
+                <h5 class="card-title text-white text-center ">{{ category.catName }}</h5>
+            </div>
+        </div>
+  </button>
+</div>
+
+<div class="col col-md-4 collapse collapse-horizontal" id="colls{{ category.id }}">
+      {% for subcat in category.subCategories %}
+      <a class="btn" href="{{ path("app_produit_catalogue", {"subcat":subcat.id }) }}">
+          <div class="card bg-dark border border-white">
+              <img src="{{ asset('assets/img/' ~ subcat.subPictureName ) }}" class="mx-auto mt-2 card-img-top size_img" alt="{{ category.catName }}">
+              <div class="card-body">
+                  <h5 class="card-title text-white text-center ">{{ subcat.subName }}</h5>
+              </div>
+          </div>
+      </a>
+      {% endfor %}
+</div>
+
+
         {% endfor %}
-    </ul>
+</section>
 {% endblock %}
 
 {% block javascripts %}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.category').click(function() {
-                $(this).find('.subcategories').toggle();
-            });
 
-            $('.subcategory').click(function(event) {
-                event.stopPropagation();
-                $(this).find('.products').toggle();
-            });
-        });
-    </script>
 {% endblock %}

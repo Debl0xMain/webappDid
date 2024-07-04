@@ -24,6 +24,7 @@ return [
     'catalogue' => [[], ['_controller' => 'App\\Controller\\PageController::catalogue'], [], [['text', '/catalogue']], [], [], []],
     'app_occasion' => [[], ['_controller' => 'App\\Controller\\PageController::occasion'], [], [['text', '/occasion']], [], [], []],
     'app_detail_occasion' => [['moto_id'], ['_controller' => 'App\\Controller\\PageController::detail_occasion'], [], [['variable', '/', '[^/]++', 'moto_id', true], ['text', '/occasion']], [], [], []],
+    'app_produit_catalogue' => [['subcat'], ['_controller' => 'App\\Controller\\PageController::produit_catalogue'], [], [['variable', '/', '[^/]++', 'subcat', true], ['text', '/produits']], [], [], []],
     'App\Controller\FunctionController::addEmail' => [[], ['_controller' => 'App\\Controller\\FunctionController::addEmail'], [], [['text', '/add-email']], [], [], []],
     'App\Controller\FunctionController::motosParMarque' => [[], ['_controller' => 'App\\Controller\\FunctionController::motosParMarque'], [], [['text', '/select_m']], [], [], []],
     'App\Controller\FunctionController::motosAll' => [[], ['_controller' => 'App\\Controller\\FunctionController::motosAll'], [], [['text', '/select_a']], [], [], []],
@@ -31,4 +32,5 @@ return [
     'App\Controller\PageController::catalogue' => [[], ['_controller' => 'App\\Controller\\PageController::catalogue'], [], [['text', '/catalogue']], [], [], []],
     'App\Controller\PageController::occasion' => [[], ['_controller' => 'App\\Controller\\PageController::occasion'], [], [['text', '/occasion']], [], [], []],
     'App\Controller\PageController::detail_occasion' => [['moto_id'], ['_controller' => 'App\\Controller\\PageController::detail_occasion'], [], [['variable', '/', '[^/]++', 'moto_id', true], ['text', '/occasion']], [], [], []],
+    'App\Controller\PageController::produit_catalogue' => [['subcat'], ['_controller' => 'App\\Controller\\PageController::produit_catalogue'], [], [['variable', '/', '[^/]++', 'subcat', true], ['text', '/produits']], [], [], []],
 ];

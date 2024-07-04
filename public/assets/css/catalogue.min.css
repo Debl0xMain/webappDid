@@ -1,3 +1,7 @@
 h1,ul,li,a {
     color: white;
 }
+.size_img {
+    height: 10rem;
+    width: 10rem;
+}

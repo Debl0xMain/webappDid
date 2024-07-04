@@ -382,6 +382,7 @@
       <argument type="service" id="App\Repository\CategoryRepository"/>
       <argument type="service" id="App\Repository\MotoRepository"/>
       <argument type="service" id="App\Repository\MarqueRepository"/>
+      <argument type="service" id="App\Repository\ProduitsRepository"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.8FV7jiY.App\Controller\PageController"/>
       </call>

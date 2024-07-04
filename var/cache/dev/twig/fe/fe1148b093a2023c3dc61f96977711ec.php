@@ -154,7 +154,7 @@ class __TwigTemplate_224975ca8046227dc56f0f3b05a0e80a extends Template
         // line 30
         yield "        </section>
     </form>
-<div class=\"my-5 row row-cols-1 row-cols-md-2 g-4\" id=\"moto_list\">
+<div class=\"my-5 row row-cols-md-2 g-4\" id=\"moto_list\">
 ";
         // line 33
         $context['_parent'] = $context;
@@ -339,7 +339,7 @@ class __TwigTemplate_224975ca8046227dc56f0f3b05a0e80a extends Template
             {% endfor %}
         </section>
     </form>
-<div class=\"my-5 row row-cols-1 row-cols-md-2 g-4\" id=\"moto_list\">
+<div class=\"my-5 row row-cols-md-2 g-4\" id=\"moto_list\">
 {% for moto in motos %}
   <div class=\"col\">
   {# card #}
