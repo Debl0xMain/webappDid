@@ -975,6 +975,6 @@ class __TwigTemplate_b78529528d4e925df9cac456a1e9956b extends Template
         </td>
     </tr>
 {% endmacro %}
-", "@DoctrineMigrations/Collector/migrations.html.twig", "/home/deblox/Desktop/Did Custom/AppWebDiDCustom/my_project_directory/vendor/doctrine/doctrine-migrations-bundle/Resources/views/Collector/migrations.html.twig");
+", "@DoctrineMigrations/Collector/migrations.html.twig", "/home/deblox/Desktop/Did Custom/webappDid/vendor/doctrine/doctrine-migrations-bundle/Resources/views/Collector/migrations.html.twig");
     }
 }

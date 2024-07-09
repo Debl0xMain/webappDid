@@ -997,6 +997,6 @@ class __TwigTemplate_fc26b1ea35dde071589452c7ceb54443 extends Template
         </table>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/config.html.twig", "/home/deblox/Desktop/Did Custom/AppWebDiDCustom/my_project_directory/vendor/symfony/web-profiler-bundle/Resources/views/Collector/config.html.twig");
+", "@WebProfiler/Collector/config.html.twig", "/home/deblox/Desktop/Did Custom/webappDid/vendor/symfony/web-profiler-bundle/Resources/views/Collector/config.html.twig");
     }
 }

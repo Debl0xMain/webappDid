@@ -985,6 +985,6 @@ class __TwigTemplate_c96c25a0da9d9e7e97a58c2c89c2b0ea extends Template
         {% endautoescape %}</script>
     </div>
 {% endmacro %}
-", "@WebProfiler/Collector/time.html.twig", "/home/deblox/Desktop/Did Custom/AppWebDiDCustom/my_project_directory/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.html.twig");
+", "@WebProfiler/Collector/time.html.twig", "/home/deblox/Desktop/Did Custom/webappDid/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.html.twig");
     }
 }

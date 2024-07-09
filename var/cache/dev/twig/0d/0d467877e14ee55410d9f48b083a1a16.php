@@ -160,6 +160,6 @@ class __TwigTemplate_f0458c895ae88d2487d46878681f1d82 extends Template
 
     {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', { link: profiler_url }) }}
 {% endblock %}
-", "@WebProfiler/Profiler/cancel.html.twig", "/home/deblox/Desktop/Did Custom/AppWebDiDCustom/my_project_directory/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/cancel.html.twig");
+", "@WebProfiler/Profiler/cancel.html.twig", "/home/deblox/Desktop/Did Custom/webappDid/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/cancel.html.twig");
     }
 }

@@ -1029,6 +1029,6 @@ $context["call"], "return", [], "any", false, false, false, 309) === false)) {
         </menu>
     </dialog>
 {% endblock %}
-", "@WebProfiler/Collector/workflow.html.twig", "/home/deblox/Desktop/Did Custom/AppWebDiDCustom/my_project_directory/vendor/symfony/web-profiler-bundle/Resources/views/Collector/workflow.html.twig");
+", "@WebProfiler/Collector/workflow.html.twig", "/home/deblox/Desktop/Did Custom/webappDid/vendor/symfony/web-profiler-bundle/Resources/views/Collector/workflow.html.twig");
     }
 }

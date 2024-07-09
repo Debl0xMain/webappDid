@@ -650,6 +650,6 @@ class __TwigTemplate_3c04df1b7cd256d9d60adc31925719f1 extends Template
         }
     }
 </script>
-", "@WebProfiler/Profiler/base_js.html.twig", "/home/deblox/Desktop/Did Custom/AppWebDiDCustom/my_project_directory/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/base_js.html.twig");
+", "@WebProfiler/Profiler/base_js.html.twig", "/home/deblox/Desktop/Did Custom/webappDid/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/base_js.html.twig");
     }
 }

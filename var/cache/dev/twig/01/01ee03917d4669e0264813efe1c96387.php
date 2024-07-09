@@ -182,6 +182,6 @@ class __TwigTemplate_2251f0510e804c89565588d6f061cc32 extends Template
         {%- endfor -%}
     </pre>
 {% endif %}
-", "@Doctrine/Collector/explain.html.twig", "/home/deblox/Desktop/Did Custom/AppWebDiDCustom/my_project_directory/vendor/doctrine/doctrine-bundle/templates/Collector/explain.html.twig");
+", "@Doctrine/Collector/explain.html.twig", "/home/deblox/Desktop/Did Custom/webappDid/vendor/doctrine/doctrine-bundle/templates/Collector/explain.html.twig");
     }
 }

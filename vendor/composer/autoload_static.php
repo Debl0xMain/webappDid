@@ -532,7 +532,7 @@ class ComposerStaticInit8116c249f0b4dbcd995d077b53ca826b
         ),
         'Doctrine\\Migrations\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/migrations/lib/Doctrine/Migrations',
+            0 => __DIR__ . '/..' . '/doctrine/migrations/src',
         ),
         'Doctrine\\Instantiator\\' => 
         array (

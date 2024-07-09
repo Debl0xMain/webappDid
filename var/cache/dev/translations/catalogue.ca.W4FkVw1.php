@@ -166,10 +166,10 @@ $catalogue = new MessageCatalogue('ca', array (
     'Credentials have expired.' => 'Les credencials han expirat.',
     'Account is disabled.' => 'El compte està deshabilitat.',
     'Account is locked.' => 'El compte està bloquejat.',
-    'Too many failed login attempts, please try again later.' => 'Massa intents d\'inici de sessió fallits, torneu-ho a provar més tard.',
+    'Too many failed login attempts, please try again later.' => 'Massa intents d\'inici de sessió fallits, si us plau torneu-ho a provar més tard.',
     'Invalid or expired login link.' => 'Enllaç d\'inici de sessió no vàlid o caducat.',
-    'Too many failed login attempts, please try again in %minutes% minute.' => 'Massa intents d\'inici de sessió fallits, torneu-ho a provar en %minutes% minut.',
-    'Too many failed login attempts, please try again in %minutes% minutes.' => 'Massa intents fallits d\'inici de sessió, torneu-ho a provar d\'aquí a %minutes% minuts.',
+    'Too many failed login attempts, please try again in %minutes% minute.' => 'Massa intents d\'inici de sessió fallits, si us plau torneu-ho a provar en %minutes% minut.',
+    'Too many failed login attempts, please try again in %minutes% minutes.' => 'Massa intents d\'inici de sessió fallits, si us plau torneu-ho a provar en %minutes% minuts.',
   ),
 ));
 

@@ -99,6 +99,9 @@ class __TwigTemplate_4a7b476eb55b071c0c79f54211cfa165 extends Template
         yield "
 </pre>
 
+";
+        // line 15
+        yield "
 
 ";
         
@@ -110,7 +113,7 @@ class __TwigTemplate_4a7b476eb55b071c0c79f54211cfa165 extends Template
         return; yield '';
     }
 
-    // line 17
+    // line 19
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -120,7 +123,7 @@ class __TwigTemplate_4a7b476eb55b071c0c79f54211cfa165 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 18
+        // line 20
         yield " 
 ";
         
@@ -153,7 +156,7 @@ class __TwigTemplate_4a7b476eb55b071c0c79f54211cfa165 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  124 => 18,  114 => 17,  98 => 11,  93 => 8,  83 => 7,  71 => 4,  61 => 3,  38 => 1,);
+        return array (  127 => 20,  117 => 19,  104 => 15,  98 => 11,  93 => 8,  83 => 7,  71 => 4,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -170,6 +173,8 @@ class __TwigTemplate_4a7b476eb55b071c0c79f54211cfa165 extends Template
 <pre>
     {{ dump(produits) }}
 </pre>
+
+{# Produit 3 par ligne : onclick open modal with detail #}
 
 
 {% endblock %}

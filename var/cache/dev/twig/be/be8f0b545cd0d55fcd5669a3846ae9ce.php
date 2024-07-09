@@ -458,6 +458,6 @@ class __TwigTemplate_447b16750859c049d084f920ddf90fed extends Template
         </div>
     {% endfor %}
 {% endblock %}
-", "@Debug/Profiler/dump.html.twig", "/home/deblox/Desktop/Did Custom/AppWebDiDCustom/my_project_directory/vendor/symfony/debug-bundle/Resources/views/Profiler/dump.html.twig");
+", "@Debug/Profiler/dump.html.twig", "/home/deblox/Desktop/Did Custom/webappDid/vendor/symfony/debug-bundle/Resources/views/Profiler/dump.html.twig");
     }
 }

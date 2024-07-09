@@ -81,6 +81,6 @@ class __TwigTemplate_b33fd86ee3d2dbdbccbf1adf00fa9bb5 extends Template
     public function getSourceContext()
     {
         return new Source("{% extends \"@email/zurb_2/notification/body.html.twig\" %}
-", "@email/default/notification/body.html.twig", "/home/deblox/Desktop/Did Custom/AppWebDiDCustom/my_project_directory/vendor/symfony/twig-bridge/Resources/views/Email/default/notification/body.html.twig");
+", "@email/default/notification/body.html.twig", "/home/deblox/Desktop/Did Custom/webappDid/vendor/symfony/twig-bridge/Resources/views/Email/default/notification/body.html.twig");
     }
 }
